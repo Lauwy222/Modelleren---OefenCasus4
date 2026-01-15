@@ -23,3 +23,4 @@ root.title('My First GUI')
 #%% S6 - Place GUI Elements
 
 #%% S7- Create event loop
+root.mainloop()
