@@ -59,7 +59,7 @@ root.resizable(False, False)
 root.title('My First GUI')
 
 # Subwindow creation (matplotlib in tkinter)
-figure1 = plt.Figure(figsize=(4, 4), dpi=150)
+figure1 = plt.Figure(figsize=(4, 4), dpi=150, facecolor='#F0F0F0')
 canvas = FigureCanvasTkAgg(figure1, master=root)
 canvas_widget = canvas.get_tk_widget()
 
