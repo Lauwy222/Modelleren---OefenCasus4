@@ -11,10 +11,12 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 #%% S2 - Initial values
+initial_elbow_ang=60
 
 #%% S3 - Gui Callback
-def slider_changed(event):
-    print(event)
+#slider fallback
+def slider_changed(*_):
+    print(slider.get())
 
 #%% S4 - Create model
 
@@ -32,6 +34,7 @@ canvas_widget = canvas.get_tk_widget()
 
 # Slider
 slider = tk.Scale(master=root, from_=10,to=180,label="Joint angle",resolution=1,length=200,command=slider_changed,orient='horizontal')
+slider.set(initial_elbow_ang)
 #%% S6 - Place GUI Elements
 # Subvenster
 canvas_widget.pack(side="right", fill="y")
@@ -39,4 +42,5 @@ canvas_widget.pack(side="right", fill="y")
 # Slider
 slider.pack(side="bottom", pady=100)
 #%% S7- Create event loop
+#Start main
 root.mainloop()
