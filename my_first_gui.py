@@ -16,10 +16,13 @@ initial_elbow_ang=60
 #%% S3 - Gui Callback
 #slider fallback
 def slider_changed(*_):
-    print(slider.get())
-
+    elbow_ang=slider.get()
+    segment_ang = 90-elbow_ang
 #%% S4 - Create model
-
+def calculate_model():
+    elbow = [0,0]
+    shoulder = [0,40]
+    fore_arm = 40
 #%% S5 - Create GUI Elements
 # Window creation
 root = tk.Tk()
