@@ -13,6 +13,8 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 #%% S2 - Initial values
 
 #%% S3 - Gui Callback
+def slider_changed(event):
+    print(event)
 
 #%% S4 - Create model
 
@@ -29,7 +31,7 @@ canvas = FigureCanvasTkAgg(figure1, master=root)
 canvas_widget = canvas.get_tk_widget()
 
 # Slider
-slider = tk.Scale(master=root, from_=10,to=180,label="Joint angle",resolution=1,length=200,orient='horizontal')
+slider = tk.Scale(master=root, from_=10,to=180,label="Joint angle",resolution=1,length=200,command=slider_changed,orient='horizontal')
 #%% S6 - Place GUI Elements
 # Subvenster
 canvas_widget.pack(side="right", fill="y")
